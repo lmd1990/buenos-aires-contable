@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Librería Buenos Aires Contable | Rúbrica, copias e impresión de libros contables</title>
+  <meta
+    name="description"
+    content="Librería Buenos Aires Contable en Retiro, CABA. Rúbrica, copias, impresión y venta de libros contables. Atención a estudios contables, empresas, contadores y monotributistas."
+  />
+  <meta
+    name="keywords"
+    content="librería contable, libros contables, rúbrica de libros, copias de libros contables, impresión de libros contables, Retiro, CABA, Avenida Córdoba 543"
+  />
+  <meta name="author" content="Librería Buenos Aires Contable" />
+  <meta name="robots" content="index, follow" />
+
+  <meta property="og:title" content="Librería Buenos Aires Contable" />
+  <meta
+    property="og:description"
+    content="Más de 29 años de experiencia en rúbrica, copias, impresión y gestión de libros contables."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="local.jpg" />
+
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --surface: #ffffff;
+      --primary: #10233f;
+      --primary-2: #18345d;
+      --accent: #f0b429;
+      --text: #18202b;
+      --muted: #5f6b7a;
+      --border: #dde4ee;
+      --success: #1f8f5f;
+      --shadow: 0 10px 30px rgba(16, 35, 63, 0.10);
+      --radius: 18px;
+      --radius-sm: 12px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(92%, var(--max));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      background: var(--primary);
+      color: #fff;
+      font-size: 0.95rem;
+    }
+
+    .topbar-inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      justify-content: center;
+      padding: 12px 0;
+      text-align: center;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 16px 0;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .brand h1 {
+      font-size: 1.15rem;
+      color: var(--primary);
+      line-height: 1.1;
+    }
+
+    .brand span {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 0.96rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 20px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: 0.2s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #1c1c1c;
+      box-shadow: var(--shadow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.03);
+    }
+
+    .btn-secondary {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .btn-secondary:hover {
+      background: var(--primary-2);
+    }
+
+    .hero {
+      padding: 64px 0 48px;
+      background:
+        linear-gradient(135deg, rgba(16,35,63,0.96), rgba(24,52,93,0.92)),
+        url("local.jpg") center/cover no-repeat;
+      color: #fff;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(240, 180, 41, 0.18);
+      color: #ffd978;
+      border: 1px solid rgba(255, 217, 120, 0.25);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      margin-bottom: 18px;
+      font-weight: 700;
+    }
+
+    .hero h2 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1.1;
+      margin-bottom: 16px;
+      max-width: 760px;
+    }
+
+    .hero p {
+      font-size: 1.08rem;
+      color: #e7edf7;
+      max-width: 720px;
+      margin-bottom: 26px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .hero-points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      color: #dbe5f3;
+      font-size: 0.98rem;
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.10);
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: var(--radius);
+      padding: 22px;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-card h3 {
+      margin-bottom: 14px;
+      font-size: 1.1rem;
+    }
+
+    .hero-card ul {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+      color: #edf3fb;
+    }
+
+    .section {
+      padding: 72px 0;
+    }
+
+    .section-header {
+      max-width: 760px;
+      margin-bottom: 32px;
+    }
+
+    .section-header .eyebrow {
+      color: var(--accent);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.85rem;
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+
+    .section-header h3 {
+      font-size: clamp(1.7rem, 4vw, 2.4rem);
+      color: var(--primary);
+      margin-bottom: 12px;
+      line-height: 1.15;
+    }
+
+    .section-header p {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h4 {
+      color: var(--primary);
+      margin-bottom: 10px;
+      font-size: 1.08rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.97rem;
+    }
+
+    .about-grid,
+    .contact-grid,
+    .requirements-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .about-box,
+    .contact-box,
+    .requirements-box,
+    .faq-item,
+    .time-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .about-box,
+    .contact-box,
+    .requirements-box {
+      padding: 26px;
+    }
+
+    .about-box p,
+    .contact-box p,
+    .requirements-box p,
+    .requirements-box li {
+      color: var(--muted);
+    }
+
+    .about-box ul,
+    .requirements-box ul {
+      padding-left: 18px;
+      margin-top: 14px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr 0.85fr;
+      gap: 18px;
+    }
+
+    .gallery-card {
+      overflow: hidden;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      background: var(--surface);
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      min-height: 240px;
+    }
+
+    .times-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+    }
+
+    .time-item {
+      padding: 20px;
+    }
+
+    .time-item strong {
+      display: block;
+      color: var(--primary);
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+
+    .time-item span {
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .faq-item {
+      padding: 22px;
+    }
+
+    .faq-item h4 {
+      color: var(--primary);
+      margin-bottom: 8px;
+      font-size: 1.05rem;
+    }
+
+    .faq-item p {
+      color: var(--muted);
+    }
+
+    .map-frame {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      min-height: 420px;
+      background: #ddd;
+    }
+
+    .map-frame iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 420px;
+      border: 0;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 14px;
+      margin: 18px 0 22px;
+    }
+
+    .contact-item {
+      padding: 14px 16px;
+      background: #f7f9fc;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+    }
+
+    .contact-item strong {
+      display: block;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    .footer {
+      background: var(--primary);
+      color: #e7edf7;
+      padding: 28px 0;
+      margin-top: 20px;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .floating-whatsapp {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 1200;
+      background: #25d366;
+      color: white;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.2);
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .about-grid,
+      .contact-grid,
+      .requirements-grid,
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .times-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        width: 100%;
+      }
+
+      .hero {
+        padding-top: 48px;
+      }
+
+      .cards,
+      .times-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 56px 0;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span>Lunes a viernes de 10 a 17 hs</span>
+      <span>Av. Córdoba 543, local 63, Retiro, CABA</span>
+      <span>Tel: 11 4315-1522</span>
+    </div>
+  </div>
+
+  <header class="navbar">
+    <div class="container nav-inner">
+      <div class="brand">
+        <h1>Librería Buenos Aires Contable</h1>
+        <span>Rúbrica, copias e impresión de libros contables</span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#servicios">Servicios</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#requisitos">Requisitos</a>
+        <a href="#faq">Preguntas frecuentes</a>
+        <a href="#ubicacion">Ubicación</a>
+        <a class="btn btn-primary" href="https://wa.me/541158730750" target="_blank">
+          WhatsApp
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="badge">Más de 29 años de experiencia</div>
+          <h2>Soluciones rápidas y confiables para libros contables y trámites de rúbrica</h2>
+          <p>
+            En Librería Buenos Aires Contable atendemos a estudios contables, empresas,
+            contadores independientes y monotributistas con un servicio ágil, claro y profesional.
+            Copias, impresión, venta de libros y gestión completa del trámite.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/541158730750?text=Hola,%20quiero%20consultar%20por%20libros%20contables%20y%20r%C3%BAbrica" target="_blank">
+              Consultar por WhatsApp
+            </a>
+            <a class="btn btn-secondary" href="#servicios">
+              Ver servicios
+            </a>
+          </div>
+
+          <div class="hero-points">
+            <span>✔ Calidad</span>
+            <span>✔ Rapidez</span>
+            <span>✔ Buen precio</span>
+            <span>✔ Atención especializada</span>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <h3>¿Qué hacemos?</h3>
+          <ul>
+            <li>📘 Copias de libros contables</li>
+            <li>📑 Rúbrica de libros</li>
+            <li>🖨 Impresión de libros contables</li>
+            <li>🧾 Venta de libros contables</li>
+            <li>📋 Gestión completa del trámite</li>
+            <li>🚚 Atención para clientes de todo el país</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="servicios">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Servicios</span>
+          <h3>Servicios especializados para estudios contables, empresas y profesionales</h3>
+          <p>
+            No somos una librería común. Nos especializamos en libros contables, copias,
+            impresión y gestión de rúbrica con foco en rapidez, experiencia y precisión.
+          </p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <h4>Copias de libros contables</h4>
+            <p>
+              Realizamos copias prolijas y ordenadas para cumplir con los requerimientos
+              contables y administrativos de cada cliente.
+            </p>
+          </article>
+
+          <article class="card">
+            <h4>Rúbrica de libros</h4>
+            <p>
+              Gestionamos el trámite de rúbrica con conocimiento técnico y seguimiento,
+              para que el cliente no pierda tiempo.
+            </p>
+          </article>
+
+          <article class="card">
+            <h4>Impresión de libros</h4>
+            <p>
+              Impresión de libros contables con atención personalizada y opción de tiempos
+              normales, preferenciales y urgentes.
+            </p>
+          </article>
+
+          <article class="card">
+            <h4>Venta de libros contables</h4>
+            <p>
+              Provisión de libros contables para profesionales, empresas y estudios que
+              necesitan resolver todo en un solo lugar.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="nosotros">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Nosotros</span>
+          <h3>Experiencia real en el rubro contable</h3>
+          <p>
+            El negocio está liderado por Pablo Enrique Bellotti, contador, lo que aporta
+            una mirada profesional y práctica sobre la necesidad real del cliente.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-box">
+            <h4 style="color: var(--primary); margin-bottom: 14px;">¿Por qué elegirnos?</h4>
+            <p>
+              Porque entendemos tanto el trámite como la urgencia. Hace más de 29 años
+              que acompañamos a estudios contables, empresas y profesionales con un
+              servicio confiable, rápido y claro.
+            </p>
+            <ul>
+              <li>Más de 29 años de trayectoria</li>
+              <li>Atención personalizada</li>
+              <li>Dueño contador: entiende lo que necesitás</li>
+              <li>Servicio para CABA y clientes de todo el país</li>
+            </ul>
+          </div>
+
+          <div class="about-box">
+            <h4 style="color: var(--primary); margin-bottom: 14px;">Clientes habituales</h4>
+            <p>
+              Trabajamos con quienes necesitan resolver este tipo de gestiones de forma
+              ágil.
+            </p>
+            <ul>
+              <li>Estudios contables</li>
+              <li>Empresas</li>
+              <li>Contadores independientes</li>
+              <li>Monotributistas</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Imágenes</span>
+          <h3>Local, ubicación y espacio de trabajo</h3>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-card">
+            <img src="img/local.jpg" alt="Local de Librería Buenos Aires Contable" />
+          </div>
+          <div class="gallery-card">
+            <img src="img/frente_galeria.jpg" alt="Frente de la Galería Buenos Aires en Av. Córdoba" />
+          </div>
+          <div class="gallery-card">
+            <img src="img/interior.jpg" alt="Interior y espacio de trabajo de Librería Buenos Aires Contable" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Tiempos</span>
+          <h3>Opciones según urgencia del trabajo</h3>
+          <p>
+            Los tiempos pueden variar según volumen y tipo de trámite, pero estas son las
+            referencias generales de atención.
+          </p>
+        </div>
+
+        <div class="times-grid">
+          <div class="time-item">
+            <strong>Rúbrica urgente</strong>
+            <span>3 días aproximadamente</span>
+          </div>
+
+          <div class="time-item">
+            <strong>Rúbrica normal</strong>
+            <span>20 días aproximadamente</span>
+          </div>
+
+          <div class="time-item">
+            <strong>Copias normales</strong>
+            <span>1 semana aproximadamente</span>
+          </div>
+
+          <div class="time-item">
+            <strong>Servicio preferencial</strong>
+            <span>72 hs</span>
+          </div>
+
+          <div class="time-item">
+            <strong>Urgente en el día</strong>
+            <span>Sujeto a disponibilidad</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="requisitos">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Requisitos</span>
+      <h3>Pedido de rúbricas – Sociedad Anónima en Capital Federal</h3>
+      <p>
+        A continuación se detallan los requisitos, libros obligatorios y
+        condiciones generales para solicitar la rúbrica de libros contables.
+      </p>
+    </div>
+
+    <div class="requirements-grid">
+      <div class="requirements-box">
+        <h4 style="color: var(--primary); margin-bottom: 14px;">Requisitos</h4>
+        <ul>
+          <li>Fotocopia del Estatuto con inscripción IGJ y todas las modificaciones.</li>
+          <li>Fotocopia de CUIT.</li>
+          <li>Fotocopia de la última acta de “Designación de cargos” inscripta en IGJ (Art. 60 Ley Soc.).</li>
+          <li>Si firma la foja un apoderado: fotocopia del poder amplio de administración.</li>
+          <li>Fotocopia de la rúbrica y último folio copiado (el 50% del libro anterior debe estar copiado).</li>
+          <li>CUIL del firmante (presidente o apoderado).</li>
+        </ul>
+
+        <p style="margin-top: 16px;">
+          <strong>Importante:</strong> Se debe aclarar si la empresa lleva algún libro en formato digital.
+        </p>
+
+        <p style="margin-top: 12px;">
+          <strong>Si es la primera vez que rubrica:</strong> solo es necesario fotocopia del Estatuto y CUIT.
+        </p>
+      </div>
+
+      <div class="requirements-box">
+        <h4 style="color: var(--primary); margin-bottom: 14px;">Libros obligatorios</h4>
+        <ul>
+          <li>Actas Directorio</li>
+          <li>Actas Asamblea</li>
+          <li>Diario</li>
+          <li>Inventario y Balance</li>
+          <li>Depósito de Acciones y Registro de Asistencia</li>
+          <li>Registro de Acciones</li>
+          <li>IVA Ventas</li>
+          <li>IVA Compras</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="requirements-grid" style="margin-top: 24px;">
+      <div class="requirements-box">
+        <h4 style="color: var(--primary); margin-bottom: 14px;">Costos y demoras</h4>
+
+        <p style="margin-bottom: 14px;">
+          <strong>Trámite normal hasta 5 libros</strong><br>
+          Demora aproximada: 20 días<br>
+          Incluye timbrado, foja y honorarios de escribanía.<br>
+          <strong>$265.000 final</strong>
+        </p>
+
+        <p>
+          <strong>Trámite urgente</strong><br>
+          Demora aproximada: 5 días<br>
+          <strong>$360.000 final</strong>
+        </p>
+      </div>
+
+      <div class="requirements-box">
+        <h4 style="color: var(--primary); margin-bottom: 14px;">Condiciones generales</h4>
+        <ul>
+          <li>Efectuamos copiado directo láser de libros contables. Consultar descuentos por cantidad.</li>
+          <li>Toma de firma a domicilio: consultar costo y disponibilidad con la escribanía.</li>
+          <li>Si es sociedad extranjera, debe agregar tasa retributiva.</li>
+          <li>Las rúbricas se abonan totalmente por adelantado.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Preguntas frecuentes</span>
+          <h3>Respuestas claras para las consultas más comunes</h3>
+          <p>
+            Esta parte ayuda mucho para SEO y también para que la gente llegue mejor orientada
+            antes de escribir.
+          </p>
+        </div>
+
+        <div class="faq-list">
+          <article class="faq-item">
+            <h4>¿Trabajan solo con clientes de CABA?</h4>
+            <p>
+              No. Atendemos clientes de CABA y también de todo el país.
+            </p>
+          </article>
+
+          <article class="faq-item">
+            <h4>¿Puedo consultar por WhatsApp?</h4>
+            <p>
+              Sí. Podés escribir directamente al 11 5873-0750 para consultar tiempos,
+              requisitos y tipo de trabajo.
+            </p>
+          </article>
+
+          <article class="faq-item">
+            <h4>¿Qué tipo de trabajos realizan?</h4>
+            <p>
+              Copias de libros contables, impresión de libros, venta de libros contables
+              y gestión de trámites de rúbrica.
+            </p>
+          </article>
+
+          <article class="faq-item">
+            <h4>¿Qué pasa si necesito el trabajo urgente?</h4>
+            <p>
+              Hay opciones urgentes, preferenciales y en el día, según disponibilidad
+              y tipo de trabajo.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="ubicacion">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Ubicación</span>
+          <h3>Estamos en Retiro, dentro de Galería Buenos Aires</h3>
+          <p>
+            Av. Córdoba 543, local 63, Retiro, Ciudad Autónoma de Buenos Aires.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-box">
+            <h4 style="color: var(--primary); margin-bottom: 10px;">Datos de contacto</h4>
+
+            <div class="contact-list">
+              <div class="contact-item">
+                <strong>Dirección</strong>
+                Av. Córdoba 543, local 63, Retiro, CABA
+              </div>
+
+              <div class="contact-item">
+                <strong>WhatsApp</strong>
+                <a href="https://wa.me/541158730750" target="_blank">11 5873-0750</a>
+              </div>
+
+              <div class="contact-item">
+                <strong>Teléfono</strong>
+                <a href="tel:+541143151522">11 4315-1522</a>
+              </div>
+
+              <div class="contact-item">
+                <strong>Email</strong>
+                <a href="mailto:bsas_contable@hotmail.com">bsas_contable@hotmail.com</a>
+              </div>
+
+              <div class="contact-item">
+                <strong>Horario</strong>
+                Lunes a viernes de 10 a 17 hs
+              </div>
+            </div>
+
+            <a class="btn btn-primary" href="https://wa.me/541158730750?text=Hola,%20quiero%20hacer%20una%20consulta%20sobre%20libros%20contables" target="_blank">
+              Escribir por WhatsApp
+            </a>
+          </div>
+
+          <div class="map-frame">
+            <iframe
+              src="https://www.google.com/maps?q=Av.%20Cordoba%20543%20local%2063%20Retiro%20CABA&output=embed"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Mapa de Librería Buenos Aires Contable"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>Librería Buenos Aires Contable © 2026</p>
+      <p>Rúbrica, copias, impresión y venta de libros contables</p>
+    </div>
+  </footer>
+
+  <a
+    class="floating-whatsapp"
+    href="https://wa.me/541158730750?text=Hola,%20quiero%20consultar%20por%20un%20trabajo"
+    target="_blank"
+    aria-label="Escribir por WhatsApp"
+    title="Escribir por WhatsApp"
+  >
+    ✆
+  </a>
+
+</body>
+</html>
